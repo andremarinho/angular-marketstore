@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { products } from '..products';
-
+import { products } from './products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  itens: [];
+  items : any[] = [];
 
-    addToCard(product){
-
-      this.itens.push(product);
-    }
+     addToCart(product) {
+       
+        this.items.push(product);
+     }
 
     getItens(){
 
-      return this.itens;
+      return this.items;
 
     }
 
     clearCard(){
-      this.itens = [];
-      return this.itens;
+      this.items = [];
+      return this.items;
     }
   
   
