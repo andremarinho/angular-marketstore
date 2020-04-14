@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 import { products } from './products';
 
@@ -25,10 +26,16 @@ export class CartService {
       this.items = [];
       return this.items;
     }
+
+    getShippingPrices(){
+      return this.http.get('/assets/shipping.json');
+    }
   
   
   
-  constructor() { 
+  constructor(
+    private http: HttpClient
+  ) { 
 
     
 
