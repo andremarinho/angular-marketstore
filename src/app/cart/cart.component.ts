@@ -32,6 +32,8 @@ export class CartComponent implements OnInit {
 
   onSubmit(customerData){
 
+    console.log('teste')
+    
     this.items = this.cartService.clearCard;
     this.checkoutForm.reset();
 
